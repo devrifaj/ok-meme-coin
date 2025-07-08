@@ -133,7 +133,7 @@ const Hero = () => {
       {/* hero bg image */}
       <div className="absolute top-5.5 bottom-0 left-0 w-full h-full flex justify-center items-center -z-20">
         <Image
-          src="/hero-bg-square.png"
+          src="/hero/hero-bg-square.png"
           alt="hero"
           width={1000}
           height={1000}
