@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-lexend: var(--font-lexend);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-primary-black: #191919;
+  --color-purple: #b341ff;
+  --color-green: #c2f929;
+  --color-deep-green: #ADD753;
+  --color-cyan: #0fcdc8;
+}
+
+@layer base {
+  body {
+    @apply bg-primary-black text-white font-lexend max-w-[1440px] mx-auto;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .gradient-text {
+    background: linear-gradient(180deg, #ffdd03 0%, #fbc403 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-bg {
+    border: 0.6px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, #ffdd03 0%, #fbc403 100%);
+  }
+  .hero-title {
+    @apply text-[100px] leading-[56px] font-semibold tracking-[-2px] text-white;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply max-w-[1240px] mx-auto;
+  }
 }
